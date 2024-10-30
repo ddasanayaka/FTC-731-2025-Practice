@@ -1,0 +1,23 @@
+Follow these practices AFTER I tell you to
+
+Everyone has their own package under org.firstinspires.ftc.teamcode
+In your package, create java classes corresponding to each of the practice instructions below
+Once you finish each practice, commit and push your changes (the file you created) to the branch labeled with your name
+Use Learn Java For FTC
+Whoever makes the worst code will be humiliated
+
+Practice 1
+Write a TeleOp OpMode that writes a line of text to telemetry
+
+Practice 2
+Write an Autonomous OpMode that makes a DcMotor called "motor" spin at full power
+
+Practice 3
+Write an Autonomous OpMode that makes a DcMotor called "motor" spin in reverse at half power
+
+Practice 4
+Write a TeleOp OpMode that uses telemetry to say whether the A button on Gamepad 1 is currently pressed
+
+Practice 5
+Write a disabled TeleOp OpMode that resets the encoder reading of a DcMotor called "motor"
+
