@@ -25,8 +25,12 @@ public class ScoringMechTest extends OpMode {
     @Override
     public void loop() {
 
-        scoringMech.constantExtend(gamepad1.right_trigger, gamepad1.right_trigger > 0);
-        scoringMech.constantRetract(gamepad1.left_trigger, gamepad1.left_trigger > 0);
+        //scoringMech.constantExtend(gamepad1.right_trigger, gamepad1.right_trigger > 0);
+        //scoringMech.constantRetract(gamepad1.left_trigger, gamepad1.left_trigger > 0);
+        scoringMech.constantExtendSimple(gamepad1.right_trigger);
+        scoringMech.constantRetractSimple(gamepad1.left_trigger);
+        telemetry.addData("Extend",gamepad1.right_trigger);
+        telemetry.addData("Retract",gamepad1.left_trigger);
 
         if (gamepad1.a) {
             telemetry.addData("test","working");

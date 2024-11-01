@@ -13,7 +13,7 @@ public class ScoringMech {
      * @param ticksPerInch ignore for now
      */
     public void initialize(HardwareMap hardwareMap, double ticksPerInch) {
-        slideMotor = hardwareMap.get(DcMotor.class,"motor1");
+        slideMotor = hardwareMap.get(DcMotor.class,"motor");
         TICKS_PER_INCH = ticksPerInch;
         // Set the motor direction if needed
         slideMotor.setDirection(DcMotor.Direction.FORWARD);
@@ -85,6 +85,11 @@ public class ScoringMech {
         }
     }
 
+    public void constantExtendSimple(double speed) {
+        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        slideMotor.setPower(speed);
+    }
+
     /**
      * Constantly retracts slides while active
      * @param speed speed the slides retract
@@ -100,6 +105,11 @@ public class ScoringMech {
             //slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             //slideMotor.setDirection(DcMotor.Direction.FORWARD);
         }
+    }
+
+    public void constantRetractSimple(double speed) {
+        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        slideMotor.setPower(speed);
     }
 }
 
