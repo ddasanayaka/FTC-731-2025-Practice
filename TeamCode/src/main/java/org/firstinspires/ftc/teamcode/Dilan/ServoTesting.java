@@ -25,10 +25,6 @@ public class ServoTesting extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.left_bumper) {
-            servo.setDirection(Servo.Direction.REVERSE);
-            crServo.setDirection(DcMotorSimple.Direction.REVERSE);
-
             if (gamepad1.a) {
                 servo.setPosition(1.0);
             } else if (gamepad1.b) {
@@ -37,14 +33,14 @@ public class ServoTesting extends OpMode {
                 servo.setPosition(0.5);
             }
 
-            if (gamepad1.x) {
+            if (gamepad1.right_stick_x != 0) {
                 crServo.setPower(1.0);
             }
 /*
             if (gamepad2.y) {
                 crServoR.setPower(1.0);
-            }*/
-        }else {
+            }
+
             if (gamepad1.a) {
                 servo.setPosition(1.0);
             } else if (gamepad1.b) {
@@ -55,7 +51,7 @@ public class ServoTesting extends OpMode {
 
             if (gamepad1.x) {
                 crServo.setPower(1.0);
-            }
-        }
+            }*/
+
     }
 }

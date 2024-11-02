@@ -80,14 +80,9 @@ public class ScoringMech {
             slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             slideMotor.setPower(speed);
         }else {
+            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             slideMotor.setPower(0);
-            //slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         }
-    }
-
-    public void constantExtendSimple(double speed) {
-        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        slideMotor.setPower(speed);
     }
 
     /**
@@ -97,19 +92,12 @@ public class ScoringMech {
      */
     public void constantRetract(double speed, boolean isActive) {
         if (isActive) {
-            //slideMotor.setDirection(DcMotor.Direction.REVERSE);
             slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             slideMotor.setPower(-speed);
         }else {
+            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             slideMotor.setPower(0);
-            //slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            //slideMotor.setDirection(DcMotor.Direction.FORWARD);
         }
-    }
-
-    public void constantRetractSimple(double speed) {
-        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        slideMotor.setPower(speed);
     }
 }
 
