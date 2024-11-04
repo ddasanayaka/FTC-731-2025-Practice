@@ -8,7 +8,7 @@ public class MecanumDrive {
     private DcMotor frontRightMotor;
     private DcMotor backLeftMotor;
     private DcMotor backRightMotor;
-    private final int slowModeFactor = 3;
+    private final int SLOW_MODE_FACTOR = 3;
 
     /**
      * Initializes drivetrain motors and sets directions and run modes
@@ -50,12 +50,11 @@ public class MecanumDrive {
         backRightPower /= maxSpeed;
 
         if (slowMode) {
-            frontLeftMotor.setPower(frontLeftPower / slowModeFactor);
-            frontRightMotor.setPower(frontRightPower / slowModeFactor);
-            backLeftMotor.setPower(backLeftPower / slowModeFactor);
-            backRightMotor.setPower(backRightPower / slowModeFactor);
-        }
-        else {
+            frontLeftMotor.setPower(frontLeftPower / SLOW_MODE_FACTOR);
+            frontRightMotor.setPower(frontRightPower / SLOW_MODE_FACTOR);
+            backLeftMotor.setPower(backLeftPower / SLOW_MODE_FACTOR);
+            backRightMotor.setPower(backRightPower / SLOW_MODE_FACTOR);
+        } else {
             frontLeftMotor.setPower(frontLeftPower);
             frontRightMotor.setPower(frontRightPower);
             backLeftMotor.setPower(backLeftPower);
