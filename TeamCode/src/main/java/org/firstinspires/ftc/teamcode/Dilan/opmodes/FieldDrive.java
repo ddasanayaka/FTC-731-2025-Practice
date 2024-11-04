@@ -41,17 +41,17 @@ public class FieldDrive extends OpMode {
 
         if (gamepad1.left_stick_button && !leftStickHeld) {
             slowModeActive = !slowModeActive;
-            if (slowModeActive) {
-                driveFieldCentric(forward,right,rotate,true);
-                telemetry.addData("Slow Mode","Active");
-            } else {
-                driveFieldCentric(forward,right,rotate,false);
-                telemetry.addData("Slow Mode","Inactive");
-            }
+        }
+        if (slowModeActive) {
+            driveFieldCentric(forward,right,rotate,0.3);
+            telemetry.addData("Slow Mode","Active");
+        } else {
+            driveFieldCentric(forward,right,rotate,1.0);
+            telemetry.addData("Slow Mode","Inactive");
         }
         leftStickHeld = gamepad1.left_stick_button;
 
-        telemetry.addData("Heading",driveFieldCentric(forward,right,rotate,false));
+        //telemetry.addData("Heading",driveFieldCentric(forward,right,rotate,0.0));
 
         boolean rightTriggerActive = gamepad1.right_trigger > 0;
         boolean leftTriggerActive = gamepad1.left_trigger > 0;
@@ -74,9 +74,10 @@ public class FieldDrive extends OpMode {
      * @param forward amount of forward input
      * @param right amount of strafe input
      * @param rotate amount of rotational input
+     * @param slowModeScalar activates slow mode at provided value
      * @return current robot heading
      */
-    private double driveFieldCentric(double forward, double right, double rotate, boolean slowMode) {
+    private double driveFieldCentric(double forward, double right, double rotate, double slowModeScalar) {
         double robotAngle = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS);
         // convert to polar
         double theta = Math.atan2(forward, right);
@@ -87,7 +88,7 @@ public class FieldDrive extends OpMode {
         double newForward = r * Math.sin(theta);
         double newRight = r * Math.cos(theta);
         // new mecanum drive components
-        drive.drive(newForward, newRight, rotate, slowMode);
+        drive.drive(newForward, newRight, rotate, slowModeScalar);
 
         return robotAngle;
     }
