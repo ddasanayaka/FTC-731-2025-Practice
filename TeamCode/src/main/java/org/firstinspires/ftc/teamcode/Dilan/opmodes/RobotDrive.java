@@ -27,13 +27,13 @@ public class RobotDrive extends OpMode {
 
         if (gamepad1.left_stick_button && !leftStickHeld) {
             slowModeActive = !slowModeActive;
-            if (slowModeActive) {
-                drive.drive(forward,strafe,rotate,true);
-                telemetry.addData("Slow Mode","Active");
-            } else {
-                drive.drive(forward,strafe,rotate,false);
-                telemetry.addData("Slow Mode","Inactive");
-            }
+        }
+        if (slowModeActive) {
+            drive.drive(forward,strafe,rotate,0.3);
+            telemetry.addData("Slow Mode","Active");
+        } else {
+            drive.drive(forward,strafe,rotate,1.0);
+            telemetry.addData("Slow Mode","Inactive");
         }
         leftStickHeld = gamepad1.left_stick_button;
 

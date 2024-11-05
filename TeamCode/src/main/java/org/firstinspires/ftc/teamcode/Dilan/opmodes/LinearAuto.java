@@ -14,11 +14,11 @@ public class LinearAuto extends LinearOpMode {
 
         waitForStart();
         time1.reset();
-        drive.drive(1.0,0.0,0.0,false);
+        drive.drive(1.0,0.0,0.0,1.0);
         for (double i = 0.0; i <= 1.0; i += 0.05) {
-            drive.drive(1.0,i,0.0,false);
+            drive.drive(1.0,i,0.0,1.0);
         }
-        drive.drive(0.0,0.0,0.0,false);
+        drive.drive(0.0,0.0,0.0,1.0);
         telemetry.addLine("test");
         telemetry.addLine("other test");
         telemetry.update();

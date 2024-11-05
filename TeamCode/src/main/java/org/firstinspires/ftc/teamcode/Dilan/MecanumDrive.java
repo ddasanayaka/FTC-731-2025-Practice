@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Dilan;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class MecanumDrive {
@@ -8,7 +9,6 @@ public class MecanumDrive {
     private DcMotor frontRightMotor;
     private DcMotor backLeftMotor;
     private DcMotor backRightMotor;
-    private final int slowModeFactor = 3;
 
     /**
      * Initializes drivetrain motors and sets directions and run modes
@@ -35,9 +35,9 @@ public class MecanumDrive {
      * @param frontRightPower unnormalized power for front right wheel
      * @param backLeftPower unnormalized power for back left wheel
      * @param backRightPower unnormalized power for back right wheel
-     * @param slowMode is slow mode active
+     * @param slowModeScalar activates slow mode at provided value
      */
-    private void setPowers(double frontLeftPower, double frontRightPower, double backLeftPower, double backRightPower, boolean slowMode) {
+    private void setPowers(double frontLeftPower, double frontRightPower, double backLeftPower, double backRightPower, double slowModeScalar) {
         double maxSpeed = 1.0;
         maxSpeed = Math.max(maxSpeed, Math.abs(frontLeftPower));
         maxSpeed = Math.max(maxSpeed, Math.abs(frontRightPower));
@@ -49,18 +49,11 @@ public class MecanumDrive {
         backLeftPower /= maxSpeed;
         backRightPower /= maxSpeed;
 
-        if (slowMode) {
-            frontLeftMotor.setPower(frontLeftPower / slowModeFactor);
-            frontRightMotor.setPower(frontRightPower / slowModeFactor);
-            backLeftMotor.setPower(backLeftPower / slowModeFactor);
-            backRightMotor.setPower(backRightPower / slowModeFactor);
-        }
-        else {
-            frontLeftMotor.setPower(frontLeftPower);
-            frontRightMotor.setPower(frontRightPower);
-            backLeftMotor.setPower(backLeftPower);
-            backRightMotor.setPower(backRightPower);
-        }
+
+        frontLeftMotor.setPower(frontLeftPower * slowModeScalar);
+        frontRightMotor.setPower(frontRightPower * slowModeScalar);
+        backLeftMotor.setPower(backLeftPower * slowModeScalar);
+        backRightMotor.setPower(backRightPower * slowModeScalar);
     }
 
     /**
@@ -68,15 +61,15 @@ public class MecanumDrive {
      * @param forward amount of forward motion of robot
      * @param lateral amount of lateral motion of robot
      * @param rotate amount of rotational motion of robot
-     * @param slowMode is slow mode active
+     * @param slowModeScalar activates slow mode at provided value
      */
-    public void drive(double forward, double lateral, double rotate, boolean slowMode) {
+    public void drive(double forward, double lateral, double rotate, double slowModeScalar) {
         double frontLeftPower = forward + lateral + rotate;
         double frontRightPower = forward - lateral - rotate;
         double backLeftPower = forward - lateral + rotate;
         double backRightPower = forward + lateral - rotate;
 
-        setPowers(frontLeftPower, frontRightPower, backLeftPower, backRightPower, slowMode);
+        setPowers(frontLeftPower, frontRightPower, backLeftPower, backRightPower, slowModeScalar);
     }
 }
 

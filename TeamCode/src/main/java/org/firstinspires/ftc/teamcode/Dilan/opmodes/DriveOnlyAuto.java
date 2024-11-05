@@ -37,36 +37,36 @@ public class DriveOnlyAuto extends OpMode {
         telemetry.addData("Runtime", getRuntime());
         switch (step) {
             case FORWARD:
-                drive.drive(1.0,0.0,0.0,false);
+                drive.drive(1.0,0.0,0.0,1.0);
                 if (getRuntime() >= 2.0) {
                     step = Step.STRAFE;
-                    drive.drive(0.0,0.0,0.0,false);
+                    drive.drive(0.0,0.0,0.0,1.0);
                 }
                 break;
             case STRAFE:
-                drive.drive(0.0,-1.0,0.0,false);
+                drive.drive(0.0,-1.0,0.0,1.0);
                 if (getRuntime() >= 4.0) {
                     step = Step.TURN_RIGHT;
-                    drive.drive(0.0,0.0,0.0,false);
+                    drive.drive(0.0,0.0,0.0,1.0);
                 }
                 break;
             case TURN_RIGHT:
-                drive.drive(0.0,0.0,1.0,false);
+                drive.drive(0.0,0.0,1.0,1.0);
                 if (getRuntime() >= 4.5) {
                     step = Step.SPLINE;
-                    drive.drive(0.0,0.0,0.0,false);
+                    drive.drive(0.0,0.0,0.0,1.0);
                 }
                 break;
             case SPLINE:
                 for (double i = 0.0; i <= 1.0; i += 0.05) {
-                    drive.drive(1.0,i,0.0,false);
+                    drive.drive(1.0,i,0.0,1.0);
                     telemetry.update();
                 }
                 step = Step.SPIN;
-                drive.drive(0.0,0.0,0.0,false);
+                drive.drive(0.0,0.0,0.0,1.0);
                 break;
             case SPIN:
-                drive.drive(0.0,0.0,-1.0,false);
+                drive.drive(0.0,0.0,-1.0,1.0);
                 break;
         }
     }
