@@ -1,17 +1,21 @@
 package org.firstinspires.ftc.teamcode.Alex_Wang;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @Autonomous
-public class AutonomousMotor2 {
+public class AutonomousMotor2 extends OpMode {
     private DcMotor motor;
-    public void init(HardwareMap hwMap){
-        motor = hwMap.get(DcMotor.class, "motor");
-        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-    }
-    public void setMotorSpeed(double speed){
+    @Override
+    public void init() {
         motor.setPower(-0.5);
+    }
+
+    @Override
+    public void loop() {
+        motor = hardwareMap.get(DcMotor.class, "motor");
+        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 }
