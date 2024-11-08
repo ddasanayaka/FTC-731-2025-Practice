@@ -1,24 +1,23 @@
 package org.firstinspires.ftc.teamcode.Ernest;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous()
-public class DCMotorSpin extends OpMode {
+@Disabled
+public class practice5 extends OpMode {
 
     DcMotor motor;
 
     @Override
     public void init() {
+        motor = hardwareMap.get(DcMotor.class, "motor");
+        motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     @Override
     public void loop() {
 
-        motor = hardwareMap.get(DcMotor.class, "motor");
-
-        motor.setPower(1);
     }
 
 }

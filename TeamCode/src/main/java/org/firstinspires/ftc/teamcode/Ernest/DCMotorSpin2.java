@@ -7,6 +7,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @Autonomous()
 public class DCMotorSpin2 extends OpMode {
 
+    DcMotor motor;
+
     @Override
     public void init() {
     }
@@ -14,7 +16,6 @@ public class DCMotorSpin2 extends OpMode {
     @Override
     public void loop() {
 
-        DcMotor motor;
         motor = hardwareMap.get(DcMotor.class, "motor");
 
         motor.setPower(-0.5);
