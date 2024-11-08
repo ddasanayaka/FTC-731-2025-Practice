@@ -1,10 +1,11 @@
-package org.firstinspires.ftc.teamcode.Dilan;
+package org.firstinspires.ftc.teamcode.Dilan.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
+
+import org.firstinspires.ftc.teamcode.Dilan.ScoringMechConstructor;
 
 /**
  * Deprecate once final robot mechanisms are created
@@ -35,6 +36,11 @@ public class ServoTesting extends OpMode {
 
             if (gamepad1.right_stick_x != 0) {
                 crServo.setPower(1.0);
+            }
+
+/*
+            if (gamepad1.dpad_down) {
+                ScoringMechConstructor.stop();
             }
 /*
             if (gamepad2.y) {
