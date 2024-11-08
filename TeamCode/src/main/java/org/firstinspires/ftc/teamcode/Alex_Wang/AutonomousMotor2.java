@@ -10,12 +10,12 @@ public class AutonomousMotor2 extends OpMode {
     private DcMotor motor;
     @Override
     public void init() {
-        motor.setPower(-0.5);
+        motor = hardwareMap.get(DcMotor.class, "motor");
+        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     @Override
     public void loop() {
-        motor = hardwareMap.get(DcMotor.class, "motor");
-        motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motor.setPower(-0.5);
     }
 }
