@@ -15,8 +15,6 @@ public class GamepadButton extends OpMode {
         if(gamepad1.a){
             telemetry.addData("A pressed on Gamepad 1", "pressed");
 
-        } else {
-            telemetry.clear();
         }
     }
 }

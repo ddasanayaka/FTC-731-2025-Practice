@@ -22,4 +22,8 @@ Write a TeleOp OpMode that uses telemetry to show whether the A button on Gamepa
 Practice 5
 Write a disabled OpMode of either type that resets the encoder reading of a DcMotor called "motor"
 
+Read Learn Java for FTC chapters: 1, 2, 3, 4, 5, 7, 8, 19, 20
+
 TODO Write your own code on your free time
+
+If you want to read more you can read chapters 6, 11, 12, 18, and Appendices
