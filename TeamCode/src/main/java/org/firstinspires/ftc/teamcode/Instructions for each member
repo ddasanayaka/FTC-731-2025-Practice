@@ -1,4 +1,3 @@
-==============================================================================================================
 Read Learn Java for FTC chapters: 1, 2, 3, 4, 5, 7, 8, 19, 20
   Everyone has their own package under org.firstinspires.ftc.teamcode
   In your package, create java classes corresponding to each of the practice instructions below
@@ -7,9 +6,9 @@ Read Learn Java for FTC chapters: 1, 2, 3, 4, 5, 7, 8, 19, 20
 ==============================================================================================================
 
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- REMEMBER TO PRESS "Update Project" UNDER THE "Git" TAB EVERY TIME YOU OPEN ANDROID STUDIO
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           REMEMBER TO PRESS "Update Project" UNDER THE "Git" TAB EVERY TIME YOU OPEN ANDROID STUDIO
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 Practice 1
@@ -46,8 +45,24 @@ Write a TeleOp OpMode that does the following:
         "motor" spins at half power when both A and left trigger are pressed
         "motor2" spins at half power when both B and left trigger are pressed
 
+============================================================================================================================================
+
+Final basic practice 1
+Inside each of your packages, I have added a java class called "BasicPracticeFinal"
+    Ignore the keyword "final" in line _, it doesn't do anything except make the icon different and more noticeable
+This class contains an OpMode that will allow a 4-motor mecanum drivetrain to move in its full range of motion
+    Our robot uses a 4-motor mecanum drive and will use a drivetrain OpMode similar to this practice during TeleOp
+Some comments are marked as TODO, and are yellow like this:
+In these comments, explain what the marked code does
+The class "DrivetrainExample" contains a simplified drivetrain OpMode
+
+Final basic practice 2
+Create your own OpMode
+    It can be anything that is not extremely similar to the practices
+    (Don't just make a motor spin or write something to telemetry, that is too similar to the practices)
+    You can add additional functionality to the existing practices, provided that it is not too similar to the practices
+
 =====================================================================================
-If you want to read more you I recommend chapters 6, 11, 12, 18, and Appendices
+If you want to read more, I recommend chapters 6, 11, 12, 18, and Appendices
     These chapters are not used in the practices, but may be used later
 There are also lots of programming resources for FTC elsewhere online
-=====================================================================================
