@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@TeleOp
+@TeleOp(group = "Alex")
 public class Motor4 extends OpMode {
     private DcMotor motor, motor2;
     public void init() {
@@ -28,6 +28,10 @@ public class Motor4 extends OpMode {
         }
         else if (gamepad1.b) {
             motor2.setPower(1);
+        }
+        else {
+            motor.setPower(0);
+            motor2.setPower(0);
         }
 
     }
