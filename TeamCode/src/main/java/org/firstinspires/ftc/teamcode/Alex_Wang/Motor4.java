@@ -8,6 +8,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Motor4 extends OpMode {
     private DcMotor motor, motor2;
     public void init() {
+        motor = hardwareMap.get(DcMotor.class, "motor");
+        motor2 = hardwareMap.get(DcMotor.class, "motor2");
     }
 
     public void loop() {
