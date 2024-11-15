@@ -11,11 +11,11 @@ public class TeleOpGamepadFaster extends OpMode {
     public void init() {
     }
 
-    int a = 1;
+    long a = 1;
     @Override
     public void loop() {
         if (gamepad1.a) {
-            a = a * 1000000000;
+            a = a + 1000000000;
             telemetry.addData("A is ", a);
         }
         if (gamepad1.b) {
