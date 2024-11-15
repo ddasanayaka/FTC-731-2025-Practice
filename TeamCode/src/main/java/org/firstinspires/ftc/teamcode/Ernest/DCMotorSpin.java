@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous()
+@Autonomous(group = "Ernest")
 public class DCMotorSpin extends OpMode {
 
     DcMotor motor;

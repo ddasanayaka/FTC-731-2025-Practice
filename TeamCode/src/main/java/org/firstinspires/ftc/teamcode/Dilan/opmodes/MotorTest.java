@@ -22,7 +22,9 @@ public class MotorTest extends OpMode {
     public void loop() {
         if (rev) {
             motor.setPower(-config);
+        } else {
+            motor.setPower(config);
         }
-        motor.setPower(config);
+        telemetry.addLine(String.valueOf(motor.getPower()));
     }
 }

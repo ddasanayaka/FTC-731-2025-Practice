@@ -26,6 +26,12 @@ Practice 4
 Practice 5
     Write a disabled OpMode of either type that resets the encoder reading of a DcMotor called "motor"
 
+
+||||||||||| When you mark an OpMode as @TeleOp or @ Autonomous, make the annotation look like
+            @TeleOp(group = "Alex"), @TeleOp(group = "Shrimaan"), @TeleOp(group = "Ernest")
+            @Autonomous(group = "Alex"), @Autonomous(group = "Shrimaan"), @Autonomous(group = "Ernest")
+||||||||||| This will organize your OpModes on the Driver Station, you don't have to do this for OpModes marked @Disabled
+
 Practice 6
     Write a TeleOp OpMode that displays a number on telemetry which increases when the A button on Gamepad 1 is held
     In the same OpMode, make the number decrease when the B button on Gamepad 1 is held
