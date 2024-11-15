@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Ernest.GamepadButton;
 
-@TeleOp()
+@TeleOp(group = "Alex")
 public class TeleOpGamepad extends OpMode {
 @Override
     public void init() {
@@ -16,5 +16,6 @@ int a = 1;
     public void loop() {
     telemetry.addData(String.valueOf(a + 1), gamepad1.a);
     telemetry.addData(String.valueOf(a - 1), gamepad1.b);
+
 } }
 

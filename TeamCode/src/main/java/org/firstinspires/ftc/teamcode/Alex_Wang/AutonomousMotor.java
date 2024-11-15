@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-@Autonomous
+@Autonomous(group = "Alex")
 public class AutonomousMotor extends OpMode{
 private DcMotor motor;
 
