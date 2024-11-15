@@ -14,8 +14,14 @@ public class TeleOpGamepad extends OpMode {
 int a = 1;
 @Override
     public void loop() {
-    telemetry.addData(String.valueOf(a + 1), gamepad1.a);
-    telemetry.addData(String.valueOf(a - 1), gamepad1.b);
+    if (gamepad1.a) {
+        a = a + 1;
+        telemetry.addData("A is ", a);
+    }
+    if (gamepad1.b) {
+        a = a - 1;
+        telemetry.addData("A is ", a);
+    }
 
 } }
 
