@@ -5,16 +5,16 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+// TODO: There is 1 mistake in the code, find it, correct it, and explain what difference it makes. Hints are at the bottom
+// Line number of mistake:
+// Difference:
+
 // Assume that the control hub use is connected to 4 motors which don't have encoders, and there is no other hardware connected
 // Assume that moving the left stick up moves the bot forward, right moves the bot right, and moving the right stick right makes the bot rotate right
 // The above controls are standard for FTC
 
 // TODO: What must the names of the motors on the configuration file be?
 // Answer:
-
-// TODO: There is 1 mistake in the code, find it, correct it, and explain what difference it makes. Hints are at the bottom
-// Line number of mistake:
-// Difference:
 
 // TODO: Will this OpMode show up on the Driver Hub?
 // Answer:
@@ -35,7 +35,7 @@ public final class BasicPracticeFinal extends OpMode {
         rightFrontMotor = hardwareMap.get(DcMotor.class,"rightFront");
         rightBackMotor = hardwareMap.get(DcMotor.class,"rightBack");
 
-        // TODO: What is happening in the following 4 lines?
+        // TODO: What is happening in the following 4 lines and why are they needed?
         // Answer:
         leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
         leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
@@ -96,7 +96,7 @@ public final class BasicPracticeFinal extends OpMode {
         backLeftPower /= maxSpeed;
         backRightPower /= maxSpeed;
 
-        // TODO: WHat is happening in the following 4 lines?
+        // TODO: What is happening in the following 4 lines?
         // Answer:
         leftFrontMotor.setPower(frontLeftPower);
         leftBackMotor.setPower(frontRightPower);
@@ -114,7 +114,17 @@ public final class BasicPracticeFinal extends OpMode {
         telemetry.addData("Time",runtime);
     }
 }
+
 // Mistake Hints:
+
+
+
+
+
+
+
+
+// The mistake is not in lines 1-23
 // The mistake is not in lines 88-97
 // Android Studio will not catch the mistake
 

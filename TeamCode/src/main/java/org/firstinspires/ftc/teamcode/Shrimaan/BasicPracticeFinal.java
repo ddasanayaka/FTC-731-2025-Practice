@@ -35,7 +35,7 @@ public final class BasicPracticeFinal extends OpMode {
         rightFrontMotor = hardwareMap.get(DcMotor.class,"rightFront");
         rightBackMotor = hardwareMap.get(DcMotor.class,"rightBack");
 
-        // TODO: What is happening in the following 4 lines?
+        // TODO: What is happening in the following 4 lines and why are they needed?
         // Answer:
         leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
         leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
@@ -96,7 +96,7 @@ public final class BasicPracticeFinal extends OpMode {
         backLeftPower /= maxSpeed;
         backRightPower /= maxSpeed;
 
-        // TODO: WHat is happening in the following 4 lines?
+        // TODO: What is happening in the following 4 lines?
         // Answer:
         leftFrontMotor.setPower(frontLeftPower);
         leftBackMotor.setPower(frontRightPower);
@@ -114,7 +114,17 @@ public final class BasicPracticeFinal extends OpMode {
         telemetry.addData("Time",runtime);
     }
 }
+
 // Mistake Hints:
+
+
+
+
+
+
+
+
+// The mistake is not in lines 1-23
 // The mistake is not in lines 88-97
 // Android Studio will not catch the mistake
 

@@ -20,7 +20,7 @@ public class FieldDrive extends OpMode {
     @Override
     public void init() {
         drive.initialize(hardwareMap);
-        scoringMech.initialize(hardwareMap,2000);
+        scoringMech.initialize(hardwareMap);
 
         imu = hardwareMap.get(IMU.class,"imu");
         RevHubOrientationOnRobot revHubOrientationOnRobot =

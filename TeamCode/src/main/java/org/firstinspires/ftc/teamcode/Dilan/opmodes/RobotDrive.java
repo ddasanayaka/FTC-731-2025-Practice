@@ -16,7 +16,7 @@ public class RobotDrive extends OpMode {
     @Override
     public void init() {
         drive.initialize(hardwareMap);
-        scoringMech.initialize(hardwareMap,2000);
+        scoringMech.initialize(hardwareMap);
     }
 
     @Override
