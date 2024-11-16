@@ -55,6 +55,7 @@ Practice 9
             "motor2" spins at full power when ONLY B is pressed
             "motor" spins at half power when both A and left trigger are pressed
             "motor2" spins at half power when both B and left trigger are pressed
+            Pressing both A and B should make both motors spin simultaneously
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
