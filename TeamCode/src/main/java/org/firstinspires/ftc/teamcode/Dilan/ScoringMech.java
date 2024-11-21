@@ -1,14 +1,16 @@
 package org.firstinspires.ftc.teamcode.Dilan;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
+@Config
 public class ScoringMech {
     DcMotor leftSlideMotor, rightSlideMotor;
     Servo leftLiftServo, rightLiftServo, liftClawServo;
     Servo linkLeftServo, linkRightServo, linkClawServo, linkClawLeftServo, linkClawRightServo;
-    public static double TICKS_PER_INCH;
+    public static int TICKS_PER_INCH = 2000;
 
     /**
      * Initializes scoring mech motors and sets directions and run modes

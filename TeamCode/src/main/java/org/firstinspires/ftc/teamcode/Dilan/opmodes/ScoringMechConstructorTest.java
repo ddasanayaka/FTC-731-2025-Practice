@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.Dilan.ScoringMechConstructor;
 
 @TeleOp
 public class ScoringMechConstructorTest extends OpMode {
-    ScoringMechConstructor scoringMech = new ScoringMechConstructor(hardwareMap,2000.0);
+    ScoringMechConstructor scoringMech = new ScoringMechConstructor(hardwareMap);
 
     @Override
     public void init() {
