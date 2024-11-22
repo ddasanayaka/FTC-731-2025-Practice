@@ -51,6 +51,7 @@ import java.util.Stack;
  *
  * See the sensor's product page: https://www.tindie.com/products/digitalchickenlabs/octoquad-8ch-quadrature-pulse-width-decoder/
  */
+@SuppressWarnings("all")
 @TeleOp(name = "OctoQuad Configuration Tool", group="OctoQuad")
 @Disabled
 public class UtilityOctoQuadConfigMenu extends LinearOpMode
@@ -124,7 +125,7 @@ public class UtilityOctoQuadConfigMenu extends LinearOpMode
         optionChannelBankConfig = new TelemetryMenu.EnumOption("Channel Bank Modes", OctoQuad.ChannelBankConfig.values(), octoquad.getChannelBankConfig());
 
         menuHwInfo.addChild(new TelemetryMenu.StaticItem("Board Firmware: v" + octoquad.getFirmwareVersion()));
-        //menuHwInfo.addChild(new TelemetryMenu.StaticItem("Board unique ID: FIXME"));
+        //menuHwInfo.addChild(new TelemetryMenu.StaticItem("Board unique ID:"));
 
         for(int i = 0; i < OctoQuad.NUM_ENCODERS; i++)
         {

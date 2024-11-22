@@ -11,7 +11,7 @@ public class ScoringMechTest extends OpMode {
 
     @Override
     public void init() {
-        scoringMech.initialize(hardwareMap,2000);
+        scoringMech.initialize(hardwareMap);
     }
 
     @Override

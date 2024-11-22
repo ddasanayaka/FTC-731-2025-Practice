@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Ernest;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp
+@TeleOp(group = "Ernest")
 public class GamepadButton extends OpMode {
 
     @Override
@@ -15,8 +15,6 @@ public class GamepadButton extends OpMode {
         if(gamepad1.a){
             telemetry.addData("A pressed on Gamepad 1", "pressed");
 
-        } else {
-            telemetry.clear();
         }
     }
 }

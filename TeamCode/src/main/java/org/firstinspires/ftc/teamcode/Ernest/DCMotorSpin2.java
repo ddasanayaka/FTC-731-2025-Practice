@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous(preselectTeleOp = "GamepadButton")
+@Autonomous(group = "Ernest", preselectTeleOp = "GamepadButton")
 public class DCMotorSpin2 extends OpMode {
 
     DcMotor motor;

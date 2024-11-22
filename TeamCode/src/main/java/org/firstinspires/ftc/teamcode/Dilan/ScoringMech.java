@@ -1,45 +1,46 @@
 package org.firstinspires.ftc.teamcode.Dilan;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
 
+@Config
 public class ScoringMech {
-    DcMotor slideMotor;
-    double TICKS_PER_INCH;
+    DcMotor leftSlideMotor, rightSlideMotor;
+    Servo leftLiftServo, rightLiftServo, liftClawServo;
+    Servo linkLeftServo, linkRightServo, linkClawServo, linkClawLeftServo, linkClawRightServo;
+    public static int TICKS_PER_INCH = 2000;
 
     /**
      * Initializes scoring mech motors and sets directions and run modes
      * @param hardwareMap used to create scoring mech hardware objects
-     * @param ticksPerInch ignore for now
      */
-    public void initialize(HardwareMap hardwareMap, double ticksPerInch) {
-        slideMotor = hardwareMap.get(DcMotor.class,"motor");
-        TICKS_PER_INCH = ticksPerInch;
-        // Set the motor direction if needed
-        slideMotor.setDirection(DcMotor.Direction.FORWARD);
-        slideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+    public void initialize(HardwareMap hardwareMap) {
+        leftSlideMotor = hardwareMap.get(DcMotor.class,"motor");
+        rightSlideMotor = hardwareMap.get(DcMotor.class,"motor2");
+
+        leftSlideMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftSlideMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightSlideMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftSlideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void moveToPosition(double inches, double speed) {
         int targetPosition = (int) (inches * TICKS_PER_INCH);
-        slideMotor.setTargetPosition(targetPosition);
-        slideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        slideMotor.setPower(speed);
+        leftSlideMotor.setTargetPosition(targetPosition);
+        leftSlideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftSlideMotor.setPower(speed);
 
         // Wait for the motor to reach the target position
-        while (slideMotor.isBusy()) {}
+        while (leftSlideMotor.isBusy()) {
+
+        }
 
         // Stop the motor after reaching the target
-        slideMotor.setPower(0);
-        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-    }
-
-    public void extend(double inches, double speed) {
-        moveToPosition(inches, speed);
-    }
-
-    public void retract(double inches, double speed) {
-        moveToPosition(-inches, speed);
+        leftSlideMotor.setPower(0);
+        leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     /**
@@ -47,19 +48,26 @@ public class ScoringMech {
      * @param speed speed the slides retract
      */
     public void fullRetract(double speed) {
-        slideMotor.setTargetPosition(0);
-        slideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        slideMotor.setPower(speed);
-        while (slideMotor.isBusy()) {}
-        slideMotor.setPower(0);
-        slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        leftSlideMotor.setTargetPosition(0);
+        rightSlideMotor.setTargetPosition(0);
+        leftSlideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightSlideMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftSlideMotor.setPower(speed);
+        rightSlideMotor.setPower(speed);
+        while (leftSlideMotor.isBusy() && rightSlideMotor.isBusy()) {}
+        leftSlideMotor.setPower(0);
+        rightSlideMotor.setPower(0);
+        leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rightSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        //if (leftSlideMotor.getCurrentPosition() > 20) {}
     }
 
     /**
      * Immediately halts slide motion
      */
     public void stop() {
-        slideMotor.setPower(0);
+        leftSlideMotor.setPower(0);
+        rightSlideMotor.setPower(0);
     }
 
     /**
@@ -67,7 +75,7 @@ public class ScoringMech {
      * @return slide motor position in ticks
      */
     public int currentPosition() {
-        return slideMotor.getCurrentPosition();
+        return leftSlideMotor.getCurrentPosition();
     }
 
     /**
@@ -77,11 +85,15 @@ public class ScoringMech {
      */
     public void constantExtend(double speed, boolean isActive) {
         if (isActive) {
-            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            slideMotor.setPower(speed);
-        }else {
-            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            slideMotor.setPower(0);
+            leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            rightSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            leftSlideMotor.setPower(speed);
+            rightSlideMotor.setPower(speed);
+        } else {
+            leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            rightSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            leftSlideMotor.setPower(0);
+            rightSlideMotor.setPower(0);
         }
     }
 
@@ -92,11 +104,15 @@ public class ScoringMech {
      */
     public void constantRetract(double speed, boolean isActive) {
         if (isActive) {
-            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            slideMotor.setPower(-speed);
-        }else {
-            slideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            slideMotor.setPower(0);
+            leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            rightSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            leftSlideMotor.setPower(-speed);
+            rightSlideMotor.setPower(-speed);
+        } else {
+            leftSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            rightSlideMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            leftSlideMotor.setPower(0);
+            rightSlideMotor.setPower(0);
         }
     }
 }

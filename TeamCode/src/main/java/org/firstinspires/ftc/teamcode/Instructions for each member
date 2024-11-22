@@ -1,25 +1,97 @@
-Complete these practices AFTER I tell you to
+Read Learn Java for FTC chapters: 1, 2, 3, 4, 5, 7, 8, 19, 20
+  Everyone has their own package under org.firstinspires.ftc.teamcode
+  In your package, create java classes corresponding to each of the practice instructions below
+  Once you finish each practice, use the commit tab to commit and push your changes (the file you created)
+Use Learn Java For FTC or any other resources as needed
+==============================================================================================================
 
-Everyone has their own package under org.firstinspires.ftc.teamcode
-In your package, create java classes corresponding to each of the practice instructions below
-Once you finish each practice, use the commit tab to commit and push your changes (the file you created)
-Use Learn Java For FTC or any other resources
 
-Whoever makes the worst code will be humiliated
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           REMEMBER TO PRESS "Update Project" UNDER THE "Git" TAB EVERY TIME YOU OPEN ANDROID STUDIO
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-Practice 1
-Write a TeleOp OpMode that writes a line of text to telemetry
 
-Practice 2
-Write an Autonomous OpMode that makes a DcMotor called "motor" spin at full power
+    Practice 1
+        Write a TeleOp OpMode that writes a line of text to telemetry
 
-Practice 3
-Write an Autonomous OpMode that makes a DcMotor called "motor" spin in reverse at half power
+    Practice 2
+        Write an Autonomous OpMode that makes a DcMotor called "motor" spin at full power
 
-Practice 4
-Write a TeleOp OpMode that uses telemetry to show whether the A button on Gamepad 1 is currently pressed
+    Practice 3
+        Write an Autonomous OpMode that makes a DcMotor called "motor" spin in reverse at half power
 
-Practice 5
-Write a disabled OpMode of either type that resets the encoder reading of a DcMotor called "motor"
+    Practice 4
+        Write a TeleOp OpMode that uses telemetry to show whether the A button on Gamepad 1 is currently pressed
 
-TODO Write your own code on your free time
+    Practice 5
+        Write a disabled OpMode of either type that resets the encoder reading of a DcMotor called "motor"
+
+
+||||||||||| When you mark an OpMode as @TeleOp or @Autonomous, make the annotation look like
+            @TeleOp(group = "Alex"), @TeleOp(group = "Shrimaan"), @TeleOp(group = "Ernest")
+            @Autonomous(group = "Alex"), @Autonomous(group = "Shrimaan"), @Autonomous(group = "Ernest")
+||||||||||| This will organize your OpModes on the Driver Station, you don't have to do this for OpModes marked @Disabled
+
+
+    Practice 6
+        Write a TeleOp OpMode that displays a number on telemetry which increases when the A button on Gamepad 1 is held
+        In the same OpMode, make the number decrease when the B button on Gamepad 1 is held
+
+    Practice 7
+        Building off of Practice 6, make the number displayed on telemetry increase rapidly enough so that the number displayed reaches 1 trillion
+            (There is a reason this is a separate practice)
+
+    Practice 8
+        Write a TeleOp OpMode that rotates a Servo called "servo" to any position within its range when the A button on Gamepad 1 is pressed
+        In the same OpMode, make "servo" rotate to any other position within its range when the X button on Gamepad 1 is pressed
+
+    Practice 9
+        Write a TeleOp OpMode that does the following:
+            Spin a DcMotor called "motor" at full power while the A button on Gamepad 1 is pressed
+            Spin a DcMotor called "motor2" at full power while the B button on Gamepad 1 is pressed
+            Make both motors spin at half power when the left trigger is pressed any amount AND when each motor's corresponding button is pressed
+
+            When the OpMode is run, it should do the following:
+                "motor" spins at full power when ONLY A is pressed
+                "motor2" spins at full power when ONLY B is pressed
+                "motor" spins at half power when both A and left trigger are pressed
+                "motor2" spins at half power when both B and left trigger are pressed
+                Pressing both A and B should make both motors spin simultaneously
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           REMEMBER TO PRESS "Update Project" UNDER THE "Git" TAB EVERY TIME YOU OPEN ANDROID STUDIO
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+    Final basic practice 1
+        Inside each of your packages, there is a java class called "BasicPracticeFinal"
+            Ignore the keyword "final" in line 23, in this case it doesn't do anything except make the icon different and more noticeable
+        This class contains an OpMode that will allow a 4-motor mecanum drivetrain to move in its full range of motion
+            Our robot uses a 4-motor mecanum drivetrain and will use an OpMode similar to this practice during TeleOp
+        Some comments are marked as TODO, and are yellow like this
+        Below these comments, explain what the referenced code does
+            Don't change the code of the class, even if there is a mistake (the mistake is deliberate)
+        The class "DrivetrainExample" contains a simplified drivetrain OpMode with explanatory comments that you can use a reference
+
+    Final basic practice 2
+        Create your own OpMode
+            It can be anything that is not too similar to the practices
+                (Ex. Don't just make a motor spin or write something to telemetry, that is too similar to the practices)
+            You can add additional functionality to the existing practices, provided that it is not too similar to the practices
+                (Ex. Don't remake practice 4 using a trigger instead of the A button)
+
+
+Once you finish all the practices on this file, create a package within your package and move your basic practice opmodes inside of it
+The "opmodes" package under "Dilan" is an example of this
+
+Advanced practices will be added in the "Advanced_Practices" package some time after the meeting
+Only start on those once you finish everything on this file
+If you haven't already, make sure you have read the chapters in Learn Java for FTC specified on line 1
+
+
+=====================================================================================
+If you want to read more, I recommend chapters 6, 11, 12, 18, and Appendices
+    These chapters are not used in the practices, but may be used later
+There are also lots of programming resources for FTC elsewhere online
+Keep practicing your coding, it is literally the only way to get better

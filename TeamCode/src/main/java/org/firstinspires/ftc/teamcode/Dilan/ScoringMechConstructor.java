@@ -1,23 +1,22 @@
 package org.firstinspires.ftc.teamcode.Dilan;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ScoringMechConstructor {
-    DcMotor slideMotor;
-    double TICKS_PER_INCH;
+    final DcMotorEx slideMotor;
+    int TICKS_PER_INCH;
 
     /**
      * Initializes scoring mech motors and sets directions and run modes
      * @param hardwareMap used to create scoring mech hardware objects
-     * @param ticksPerInch ignore for now
      */
-    public ScoringMechConstructor(HardwareMap hardwareMap, double ticksPerInch) {
-        this.slideMotor = hardwareMap.get(DcMotor.class,"motor");
-        this.TICKS_PER_INCH = ticksPerInch;
+    public ScoringMechConstructor(HardwareMap hardwareMap) {
+        slideMotor = hardwareMap.get(DcMotorEx.class,"motor");
         // Set the motor direction if needed
-        this.slideMotor.setDirection(DcMotor.Direction.FORWARD);
-        this.slideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        slideMotor.setDirection(DcMotor.Direction.FORWARD);
+        slideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     }
 
     public void moveToPosition(double inches, double speed) {
