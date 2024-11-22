@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Shrimaan;
+package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
