@@ -16,6 +16,9 @@ public class Motor4 extends OpMode {
         if (gamepad1.left_trigger != 0) {
             if (gamepad1.a) {
                 motor.setPower(0.5);
+                if (gamepad1.b) {
+                    motor2.setPower(0.5);
+                }
             }
             else if (gamepad1.b) {
                 motor2.setPower(0.5);
