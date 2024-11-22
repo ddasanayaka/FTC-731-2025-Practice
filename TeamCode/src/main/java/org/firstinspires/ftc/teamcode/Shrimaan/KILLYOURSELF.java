@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Shrimaan;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@TeleOp
+@TeleOp(group = "Shrimaan")
 public class KILLYOURSELF extends OpMode {
     @Override
     public void init() {
