@@ -7,9 +7,6 @@ import com.qualcomm.robotcore.hardware.PwmControl;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
-/**
- * Deprecate once final robot mechanisms are created
- */
 @TeleOp
 public class ServoTesting extends OpMode {
     Servo servo;

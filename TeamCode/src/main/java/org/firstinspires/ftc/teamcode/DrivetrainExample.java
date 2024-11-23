@@ -5,11 +5,11 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-// This OpMode is an example that allows a drivetrain to only move forwards and backwards
+// This OpMode is a simplified example that allows a drivetrain to only move forwards and backwards
 // This OpMode works on mecanum and non-mecanum wheels
 @Disabled
 @TeleOp
-public class DrivetrainExample extends OpMode {
+public final class DrivetrainExample extends OpMode {
     // Creates DcMotor objects named "frontLeftMotor", "frontRightMotor", "backLeftMotor", and "backRightMotor"
     private DcMotor frontLeftMotor;
     private DcMotor frontRightMotor;
