@@ -1,0 +1,45 @@
+The following practices should only be done after you have completed the practices on Instructions for each member
+Make sure you have read Learn Java for FTC chapters: 1, 2, 3, 4, 5, 7, 8, 19, 20
+====================================================================================================================
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ REMEMBER TO PRESS "Update Project" UNDER THE "Git" TAB EVERY TIME YOU OPEN ANDROID STUDIO
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+If you are here, you should have all of your basic practices in a sub-package within your package
+Now, create another sub-package that will contain your advanced practices
+
+
+||||||||||| When you mark an OpMode as @TeleOp or @Autonomous, make the annotation look like
+            @TeleOp(group = "Alex"), @TeleOp(group = "Shrimaan"), @TeleOp(group = "Ernest")
+            @Autonomous(group = "Alex"), @Autonomous(group = "Shrimaan"), @Autonomous(group = "Ernest")
+||||||||||| This will organize your OpModes on the Driver Station, you don't have to do this for OpModes marked @Disabled
+
+
+    Practice 0
+        Look at and understand the classes within the Practice_0 package
+
+    Practice 1
+        Copy your basic practice 9 file and duplicate it into your advanced practices package
+        Move the motor initializations within init() to a created method and call that method within init()
+            The OpMode should operate identically to basic practice 9
+
+    Practce 2
+        Create an OpMode that uses 2 methods that do math and write the output to telemetry
+            MethodExample and MethodExample2 can be used as reference
+
+    Practice 3
+        In this practice, you will create two classes
+        The classes under "Practice_3" should be used as a reference
+            The first class will not be an OpMode, and will have public methods like in the "Calculator" file
+            The second class will be an OpMode, and will use the methods like in "CalculatorOpMode"
+        Create methods in the non-OpMode class that return values, and write them to telemetry in the OpMode
+
+
+=====================================================================================
+If you want to read more, I recommend chapters 6, 11, 12, 18, and Appendices
+    These chapters are not used in the practices, but may be used later
+There are also lots of programming resources for FTC elsewhere online
+Keep practicing your coding, it is literally the only way to get better
