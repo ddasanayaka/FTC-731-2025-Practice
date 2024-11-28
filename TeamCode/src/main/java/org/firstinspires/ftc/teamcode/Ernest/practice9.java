@@ -42,7 +42,7 @@ public class practice9 extends OpMode {
         }
         else {
             motor.setPower(0);
-            motor2.setPower(0);
+            motor2.setPo wer(0);
         }
 
     }

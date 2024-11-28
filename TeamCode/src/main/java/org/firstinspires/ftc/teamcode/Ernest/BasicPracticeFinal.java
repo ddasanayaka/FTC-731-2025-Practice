@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 // TODO: There is 1 mistake in the code, find it, correct it, and explain what difference it makes. Hints are at the bottom
-// Line number of mistake:
-// Difference:
+// Line number of mistake: idk
+// Difference: other way rotation?
 
 // Assume that the control hub use is connected to 4 motors which don't have encoders, and there is no other hardware connected
 // Assume that moving the left stick up moves the bot forward, right moves the bot right, and moving the right stick right makes the bot rotate right
