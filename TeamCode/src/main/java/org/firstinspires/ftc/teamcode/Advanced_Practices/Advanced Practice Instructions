@@ -64,6 +64,16 @@ Now, create another sub-package that will contain your advanced practices
             There should not be any hardwareMap.get() functions in the init() method in the OpMode
             The only lines that should be in the loop() method are gamepad1 related or non-OpMode method calls
 
+    Once you finish practice 5, either do practice 6 or advanced practice final
+
+    Practice 6
+        This practice will combine practice 4 and 5
+        Move the servo logic to the non-OpMode class, and move the gamepad inputs to the drivetrain OpMode class
+        Put the servo logic in its own method and make separate methods for each button press
+        When complete, the analog sticks should move the drivetrain, and the buttons and triggers should adjust the servos
+        IMPORTANT:
+            There should not be any hardwareMap.get() methods or other similar methods in the OpMode
+
 
 =====================================================================================
 If you want to read more, I recommend chapters 6, 11, 12, 18, and Appendices
