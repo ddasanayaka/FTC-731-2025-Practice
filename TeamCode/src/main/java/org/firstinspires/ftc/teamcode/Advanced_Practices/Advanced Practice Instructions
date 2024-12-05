@@ -25,9 +25,10 @@ Now, create another sub-package that will contain your advanced practices
         Copy your basic practice 9 file and duplicate it into your advanced practices package
         Move the motor initializations within init() to a created method and call that method within init()
             The OpMode should operate identically to basic practice 9
+            MethodMecanum can be used as reference
 
     Practce 2
-        Create an OpMode that uses 2 methods that do math and write the output to telemetry
+        Create an OpMode that uses 2 methods that do math functions and write the output to telemetry
             MethodExample and MethodExample2 can be used as reference
 
     Practice 3
@@ -35,7 +36,33 @@ Now, create another sub-package that will contain your advanced practices
         The classes under "Practice_3" should be used as a reference
             The first class will not be an OpMode, and will have public methods like in the "Calculator" file
             The second class will be an OpMode, and will use the methods like in "CalculatorOpMode"
-        Create methods in the non-OpMode class that return values, and write them to telemetry in the OpMode
+        Create methods in the non-OpMode class that return values, and write them to telemetry in the OpMode class
+        IMPORTANT:
+            There should be nothing in the OpMode class except for telemetry.addData() lines and method calls
+            All math should be done in the non-OpMode class methods
+
+    Practice 4
+        Create an OpMode which will do the following when run:
+            When A pressed: Servo called "servo" moves to position 0.0, Servo called "servo2" moves to position 1.0
+            When B pressed: Servo called "servo" moves to position 0.25, Servo called "servo2" moves to position 0.75
+            When X pressed: Servo called "servo" moves to position 0.5, Servo called "servo2" moves to position 0.5
+            When Y pressed: Servo called "servo" moves to position 0.75, Servo called "servo2" moves to position 0.25
+            When right trigger held: CRServo called "crservo" rotates forward at full power
+            When left trigger held: CRServo called "crservo" rotates backward at full power
+        Make sure you understand your code logic because you will use it in Practice 6
+
+    Practice 5
+        In this practice, you will use two classes
+            The first class will be an OpMode, and will be a 4 motor mecanum drivetrain OpMode
+                It will be similar to Basic Practice Final 1
+                However, motor initializations and calculations will be methods
+            The second class will not be an OpMode, it will contain methods for the OpMode (similar to "Calculator" in Practice 3)
+                The motor initializations and calculations will be methods in this class
+                MecanumDriveExample can be used as reference
+        The OpMode for this practice will function the same as a 4 motor mecanum drive, but the code will be in methods from the non-OpMode class
+        IMPORTANT:
+            There should not be any hardwareMap.get() functions in the init() method in the OpMode
+            The only lines that should be in the loop() method are gamepad1 related or non-OpMode method calls
 
 
 =====================================================================================
