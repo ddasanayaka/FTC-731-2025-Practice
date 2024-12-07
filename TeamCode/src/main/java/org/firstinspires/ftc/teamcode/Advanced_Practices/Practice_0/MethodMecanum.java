@@ -15,8 +15,8 @@ public class MethodMecanum extends OpMode {
 
     @Override
     public void init() {
-        // Method is called here, temporarily move to the createMotors method
-        // init() is an overriden OpMode method, thus it can use hardwareMap (that's why it's purple)
+        // createMotors() Method is called here, temporarily move to the createMotors method
+        // init() is an OpMode method, thus it can use hardwareMap (that's why it's purple)
         createMotors(hardwareMap);
     } // Since init() only runs once, "createMotors" is only run once
 

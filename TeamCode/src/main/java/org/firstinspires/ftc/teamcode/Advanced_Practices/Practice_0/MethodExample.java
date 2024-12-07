@@ -21,6 +21,7 @@ public class MethodExample extends OpMode {
         } else {
             input = 0;
         }
+
         // Here we are assigning the output to the return value of the method "sineFunction"
                  // This is where the method is called
                  // At this point in the code, temporarily move to the sineFunction method that is created below
@@ -45,9 +46,14 @@ public class MethodExample extends OpMode {
         return Math.sin(2*input);
     } // Once you reach the end of the method, return to the place where the method was called
 
-    // As you know, OpModes must have both init() and loop(), but they don't have to do anything
-    // Notice that the placement of init within the class doesn't matter
+    // OpModes must have both init() and loop(), but they don't have to do anything
+    // Notice that the placement of init() within the class doesn't matter
     // Methods will only run when called, regardless of placement in the class
     @Override
     public void init() {}
 }
+/* Both init() and loop() are methods from OpMode, that is why OpModes have "extends OpMode", like in line 8
+ * Methods only run when they are called
+ *     The sineFunction() method runs when it is called on line 28
+ *     init() and loop() get called from the driver station
+ */
