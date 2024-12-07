@@ -4,8 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@Disabled
-@TeleOp
+@TeleOp(group = "Advanced")
 public class MethodExample2 extends OpMode {
     // Consider the math function f(x,y) = sin(x) + cos(y)
     // We are going to use a method that turns inputs x and y into an output f(x,y)
@@ -16,12 +15,12 @@ public class MethodExample2 extends OpMode {
 
         // Here we will assign the value of "x" and "y" using Gamepad 1
         if (gamepad1.a) {
-            x = Math.PI/4;
+            x = Math.PI/6;
         } else {
             x = 0;
         }
         if (gamepad1.b) {
-            y = Math.PI/4;
+            y = Math.PI/3;
         } else {
             y = 0;
         }
@@ -36,22 +35,21 @@ public class MethodExample2 extends OpMode {
     }
 
     /**
-     * This is our custom method that will act as f(x) = sin(2x)
+     * This is our custom method that will act as f(x,y) = sin(x) + cos(y)
      * @param x input "x"
+     * @param y input "y"
      * @return f(x) = sin(2x)
      */
     // "private" means that the method is inaccessible outside the class (doesn't matter in this case)
-    // "double" is the return value, the function will return a double value
-    // "(double x)" is a parameter, the method takes in an input (a double value) to use in the method
-    // "(double y)" is a parameter, the method takes in an input (a double value) to use in the method
+            // "double" is the return value, the function will return a double value
+                                      // "(double x)" is a parameter, the method takes in an input (a double value) to use in the method
+                                                // "(double y)" is a parameter, the method takes in an input (a double value) to use in the method
     private double sineCosineFunction(double x, double y) {
         // This is what the method does
         return Math.sin(x) + Math.cos(y);
-        // Once you reach the end of the method, return to the place where the method was called
-    }
+    } // Once you reach the end of the method, return to the place where the method was called
 
-    // Notice that the placement of init within the class doesn't matter
-    // Methods will only run when called, regardless of placement in the class
+
     @Override
     public void init() {}
 }

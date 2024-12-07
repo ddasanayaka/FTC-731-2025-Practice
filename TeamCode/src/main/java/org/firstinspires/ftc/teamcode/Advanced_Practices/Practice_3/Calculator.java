@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Advanced_Practices.Practice_3;
 // This class contains methods that can be used by objects of type Calculator
 public class Calculator {
 
-    // When you see one of these methods being called, the method will use the defined functionality below
+    // When you see one of these methods being called in CalculatorOpMode, the method will use the defined functionality below
 
     public double cartesianToPolarRadius(double x, double y) {
         return Math.hypot(x,y);

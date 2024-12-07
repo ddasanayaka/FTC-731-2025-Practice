@@ -18,7 +18,7 @@ public class MethodMecanum extends OpMode {
         // Method is called here, temporarily move to the createMotors method
         // init() is an overriden OpMode method, thus it can use hardwareMap (that's why it's purple)
         createMotors(hardwareMap);
-    }
+    } // Since init() only runs once, "createMotors" is only run once
 
     @Override
     public void loop() {
@@ -28,7 +28,7 @@ public class MethodMecanum extends OpMode {
 
         // The gamepad inputs above are passed into this method
         drive(forward,strafe,rotate);
-    }
+    } // Since loop() is called repeatedly, the analog stick values and "drive" method are constantly updated
 
     // This method does everything that needs to be done regarding drivetrain motors in init()
                              // The parameter for this method is of type "HardwareMap"
@@ -51,6 +51,7 @@ public class MethodMecanum extends OpMode {
     }
 
     // This method normalizes and sets the powers of the drivetrain motors
+                       // The parameters for this method are the forward, strafe, and rotate values that define the drivetrain movements
     private void drive(double forward, double strafe, double rotate) {
         double frontLeftPower = forward + strafe + rotate;
         double frontRightPower = forward - strafe - rotate;
@@ -68,7 +69,6 @@ public class MethodMecanum extends OpMode {
         backLeftPower /= maxSpeed;
         backRightPower /= maxSpeed;
 
-        // setPower is a method
         leftFrontMotor.setPower(frontLeftPower);
         leftBackMotor.setPower(frontRightPower);
         rightFrontMotor.setPower(backLeftPower);
@@ -77,3 +77,13 @@ public class MethodMecanum extends OpMode {
         // Once the method is done, return to the place it was called
     }
 }
+/*
+ * You can see that some of the code that you have been using already are methods:
+ *     hardwareMap.get()
+ *     .setDirection()
+ *     .setMode()
+ *     .setPower()
+ *     Math.max()
+ *     Math.abs()
+ * These are all methods created by other people which we use in our OpModes
+ */

@@ -4,8 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-@Disabled
-@TeleOp
+@TeleOp(group = "Advanced")
 public class MethodExample extends OpMode {
     // Consider the math function f(x) = sin(2x)
     // We are going to use a method that turns an input x into an output f(x)
@@ -22,14 +21,15 @@ public class MethodExample extends OpMode {
         } else {
             input = 0;
         }
-
-        // This is where the method is called
-        // At this point in the code, temporarily move to the sineFunction method that is created below
+        // Here we are assigning the output to the return value of the method "sineFunction"
+                 // This is where the method is called
+                 // At this point in the code, temporarily move to the sineFunction method that is created below
         output = sineFunction(input);
 
         telemetry.addData("Final Value",output);
 
         // Since we are within loop(), the OpMode will go back to the start of loop() and run through the code again
+        // If we change the "input" by pressing a different button, all of the logic in loop() will be rerun
     }
 
     /**
@@ -43,9 +43,9 @@ public class MethodExample extends OpMode {
     private double sineFunction(double input) {
         // This is what the method does
         return Math.sin(2*input);
-        // Once you reach the end of the method, return to the place where the method was called
-    }
+    } // Once you reach the end of the method, return to the place where the method was called
 
+    // As you know, OpModes must have both init() and loop(), but they don't have to do anything
     // Notice that the placement of init within the class doesn't matter
     // Methods will only run when called, regardless of placement in the class
     @Override
