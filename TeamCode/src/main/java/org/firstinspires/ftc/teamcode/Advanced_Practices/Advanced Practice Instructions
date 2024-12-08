@@ -28,7 +28,7 @@ Now, create another sub-package that will contain your advanced practices
             The OpMode should operate identically to basic practice 9
             MethodMecanum can be used as reference
 
-    Practce 2
+    Practice 2
         Create an OpMode that uses 2 methods that do math functions and write the output to telemetry
             MethodExample and MethodExample2 can be used as reference
 
@@ -50,13 +50,14 @@ Now, create another sub-package that will contain your advanced practices
             When Y pressed: Servo called "servo" moves to position 0.75, Servo called "servo2" moves to position 0.25
             When right trigger held: CRServo called "crservo" rotates forward at full power
             When left trigger held: CRServo called "crservo" rotates backward at full power
-        Make sure you understand your code logic because you will use it in Practice 6
+        Make sure you understand your code logic because you will use it in Practice 7
 
     Practice 5
         In this practice, you will use two classes
             The first class will be an OpMode, and will be a 4 motor mecanum drivetrain OpMode
                 It will be similar to Basic Practice Final 1
                 However, motor initializations and calculations will be methods
+                Make sure your motors are named correctly (same as BasicPracticeFinal)
             The second class will not be an OpMode, it will contain methods for the OpMode (similar to "Calculator" in Practice 3)
                 The motor initializations and calculations will be methods in this class
                 MecanumDriveExample can be used as reference
@@ -85,15 +86,7 @@ Now, create another sub-package that will contain your advanced practices
                 Rotate clockwise when right stick is pushed right, and counter-clockwise when pushed left
                 Cap robot velocity at one quarter the normal speed when slow mode button is held, and return to normal velocity when released
 
-    Once you finish practice 6, either do practice 7 or start advanced practice final
-
-    Practice 7
-        This practice will combine practice 4 with your drivetrain
-        Move the servo logic to the non-OpMode class from practice 6, and move the gamepad inputs to the drivetrain OpMode class
-        Put the servo logic in its own method and make separate methods for each button press
-        When complete, the analog sticks should move the drivetrain, and the buttons and triggers should adjust the servos
-        IMPORTANT:
-            There should not be any hardwareMap.get() methods or other similar methods in the OpMode
+    Once you finish practice 6, you can start advanced practice final
 
 
 =====================================================================================
