@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Dilan.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import org.firstinspires.ftc.teamcode.Dilan.MecanumDrive;
 
 @Autonomous(preselectTeleOp = "RobotDrive")
+@Disabled
 public class DriveOnlyAuto extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     //double runTime;

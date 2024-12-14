@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Dilan.opmodes;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -9,15 +10,15 @@ import com.qualcomm.robotcore.hardware.PwmControl;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
-import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
-
 @TeleOp
+@Config
 @Disabled
-public class ServoTesting extends OpMode {
+public class ServoImplTestingDash extends OpMode {
     Servo servo;
     ServoImplEx servoImplEx;
     CRServo crServo;
     CRServoImplEx crServoImplEx;
+    public static double position;
 
 
     @Override
@@ -29,12 +30,6 @@ public class ServoTesting extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.a) {
-            servoImplEx.setPosition(1.0);
-        } else if (gamepad1.b) {
-            servoImplEx.setPosition(0.0);
-        } else if (gamepad1.x) {
-            servoImplEx.setPosition(0.5);
-        }
+            servoImplEx.setPosition(position);
     }
 }

@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Dilan.opmodes;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -7,11 +8,13 @@ import org.firstinspires.ftc.teamcode.Dilan.ScoringMech;
 import org.firstinspires.ftc.teamcode.Dilan.ScoringMechConstructor;
 
 @TeleOp
+@Disabled
 public class ScoringMechConstructorTest extends OpMode {
-    ScoringMechConstructor scoringMech = new ScoringMechConstructor(hardwareMap);
+    ScoringMechConstructor scoringMech;
 
     @Override
     public void init() {
+        scoringMech = new ScoringMechConstructor(hardwareMap);
     }
 
     @Override

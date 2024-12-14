@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Dilan.opmodes;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Dilan.ScoringMech;
 
 @TeleOp
+@Disabled
 public class ScoringMechTest extends OpMode {
     ScoringMech scoringMech = new ScoringMech();
 

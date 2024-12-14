@@ -31,6 +31,9 @@ public class FieldDrive extends OpMode {
                                 .UsbFacingDirection.FORWARD
                 );
         imu.initialize(new IMU.Parameters(revHubOrientationOnRobot));
+        telemetry.addLine("Control the robot drivetrain with the sticks");
+        telemetry.addLine("Motion will be field-centric");
+        telemetry.addLine("This has not been tested");
     }
 
     @Override
@@ -44,15 +47,15 @@ public class FieldDrive extends OpMode {
         }
         if (slowModeActive) {
             driveFieldCentric(forward,right,rotate,0.3);
-            telemetry.addData("Slow Mode","Active");
+            //telemetry.addData("Slow Mode","Active");
         } else {
             driveFieldCentric(forward,right,rotate,1.0);
-            telemetry.addData("Slow Mode","Inactive");
+            //telemetry.addData("Slow Mode","Inactive");
         }
         leftStickHeld = gamepad1.left_stick_button;
 
         //telemetry.addData("Heading",driveFieldCentric(forward,right,rotate,0.0));
-
+/*
         boolean rightTriggerActive = gamepad1.right_trigger > 0;
         boolean leftTriggerActive = gamepad1.left_trigger > 0;
 
@@ -66,7 +69,17 @@ public class FieldDrive extends OpMode {
 
         if (gamepad1.back) {
             scoringMech.fullRetract(1);
-        }
+        }*/
+        telemetry.addLine("Use left stick to control forward and lateral movement");
+        telemetry.addLine("Use right stick to control rotational movement");
+        telemetry.addLine("Click the left stick to enable/disable slow mode");
+        telemetry.addLine();
+        telemetry.addData("Forward vel",forward);
+        telemetry.addData("Lateral vel",right);
+        telemetry.addData("Angular vel",rotate);
+        telemetry.addData("Slow Mode Active",slowModeActive);
+        telemetry.addData("Time (s)",getRuntime());
+        telemetry.addData("Heading?",driveFieldCentric(forward,right,rotate,0.0));
     }
 
     /**
