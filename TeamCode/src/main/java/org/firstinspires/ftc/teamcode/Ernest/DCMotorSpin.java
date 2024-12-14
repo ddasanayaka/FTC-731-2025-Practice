@@ -1,10 +1,12 @@
 package org.firstinspires.ftc.teamcode.Ernest;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous(group = "Ernest")
+@Disabled
 public class DCMotorSpin extends OpMode {
 
     DcMotor motor;

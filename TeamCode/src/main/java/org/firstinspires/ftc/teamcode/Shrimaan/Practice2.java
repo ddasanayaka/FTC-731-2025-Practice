@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Shrimaan;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 
-@Autonomous
+@Autonomous(group = "Shrimaan")
+@Disabled
 public class Practice2 extends OpMode {
     DcMotor motor;
     @Override

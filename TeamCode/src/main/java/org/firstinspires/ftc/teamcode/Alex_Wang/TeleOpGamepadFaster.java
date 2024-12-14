@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Alex_Wang;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Ernest.GamepadButton;
 
 @TeleOp(group = "Alex")
+@Disabled
 public class TeleOpGamepadFaster extends OpMode {
     @Override
     public void init() {

@@ -1,10 +1,12 @@
 package org.firstinspires.ftc.teamcode.Alex_Wang;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(group = "Alex")
+@Disabled
 public class Motor4 extends OpMode {
     private DcMotor motor, motor2;
     public void init() {

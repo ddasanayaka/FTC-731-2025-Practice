@@ -3,11 +3,13 @@ package org.firstinspires.ftc.teamcode.Alex_Wang;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @Autonomous(group = "Alex")
+@Disabled
 public class AutonomousMotor extends OpMode{
 private DcMotor motor;
 

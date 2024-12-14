@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Alex_Wang;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp (group = "Alex")
+@Disabled
 public class AlexTeleOp extends OpMode {
     private DcMotor motor, motor2;
     private Servo servo;

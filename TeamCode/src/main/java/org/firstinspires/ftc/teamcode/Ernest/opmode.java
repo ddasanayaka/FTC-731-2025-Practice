@@ -1,11 +1,12 @@
 package org.firstinspires.ftc.teamcode.Ernest;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autonomous
-
+@Autonomous(group = "Ernest")
+@Disabled
 public class opmode extends OpMode {
 
     DcMotor leftFrontMotor = hardwareMap.get(DcMotor.class,"leftFront");

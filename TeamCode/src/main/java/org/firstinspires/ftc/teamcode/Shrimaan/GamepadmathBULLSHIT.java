@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.Shrimaan;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
-@TeleOp
+@TeleOp(group = "Shrimaan")
+@Disabled
 public class GamepadmathBULLSHIT extends OpMode {
     @Override
     public void init() {
