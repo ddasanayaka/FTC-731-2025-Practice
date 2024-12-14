@@ -27,12 +27,14 @@ buildscript {
 
 apply from: '../build.common.gradle'
 apply from: '../build.dependencies.gradle'
-//apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'org.team11260.fast-load-plugin'
 
 android {
     namespace = 'org.firstinspires.ftc.teamcode'
-
+    kotlinOptions{
+        jvmTarget = '17'
+    }
     packagingOptions {
         jniLibs {
             pickFirsts += ['**/*.so']
@@ -42,18 +44,11 @@ android {
 }
 
 repositories {
-    maven {
-        url = 'https://www.matthewo.tech/maven/'
-    }
+    maven { url = 'https://www.matthewo.tech/maven/' }
+    //maven { url = 'https://jitpack.io' }
 }
 
 dependencies {
     implementation project(':FtcRobotController')
     implementation 'org.team11260:fast-load:0.1.2'
 }
-/*
-kotlin {
-    jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
-}*/

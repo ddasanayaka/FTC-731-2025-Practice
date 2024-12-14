@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ScoringMechConstructor {
-    final DcMotorEx slideMotor;
-    int TICKS_PER_INCH;
+    private final DcMotorEx slideMotor;
+    int TICKS_PER_INCH = 2000;
 
     /**
      * Initializes scoring mech motors and sets directions and run modes
@@ -15,8 +15,9 @@ public class ScoringMechConstructor {
     public ScoringMechConstructor(HardwareMap hardwareMap) {
         slideMotor = hardwareMap.get(DcMotorEx.class,"motor");
         // Set the motor direction if needed
-        slideMotor.setDirection(DcMotor.Direction.FORWARD);
-        slideMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        slideMotor.setDirection(DcMotorEx.Direction.FORWARD);
+        slideMotor.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        slideMotor.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
     }
 
     public void moveToPosition(double inches, double speed) {
@@ -98,5 +99,6 @@ public class ScoringMechConstructor {
             slideMotor.setPower(0);
         }
     }
+
 }
 
