@@ -16,6 +16,15 @@ class TelemetryHandler @JvmOverloads constructor(
         systemTelemetry?.addData(key, value)
     }
 
+    fun addLine(value: Any) {
+        packet.addLine(value.toString())
+        systemTelemetry?.addLine(value.toString())
+    }
+
+    fun addLine() {
+        addLine("")
+    }
+
     fun fieldOverlay(): Canvas = packet.fieldOverlay()
 
     fun update() {

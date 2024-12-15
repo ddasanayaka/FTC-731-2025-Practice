@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(group = "Advanced")
+@Disabled
 public class CalculatorOpMode extends OpMode {
     // Here, an object called calculator of type Calculator is being created
     // The Calculator type is what was created in the "Calculator" file

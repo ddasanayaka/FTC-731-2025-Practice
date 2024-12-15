@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(group = "Advanced")
+@Disabled
 public class MethodExample2 extends OpMode {
     // Consider the math function f(x,y) = sin(x) + cos(y)
     // We are going to use a method that turns inputs x and y into an output f(x,y)

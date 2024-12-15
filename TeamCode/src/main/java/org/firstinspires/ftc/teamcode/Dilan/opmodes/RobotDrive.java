@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Dilan.MecanumDrive;
 import org.firstinspires.ftc.teamcode.Dilan.ScoringMech;
+import org.firstinspires.ftc.teamcode.TelemetryHandler;
 
 @TeleOp
 public class RobotDrive extends OpMode {
@@ -12,14 +13,16 @@ public class RobotDrive extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     boolean leftStickHeld;
     boolean slowModeActive;
+    TelemetryHandler telemetryHandler = new TelemetryHandler(telemetry);
 
     @Override
     public void init() {
         drive.initialize(hardwareMap);
         //scoringMech.initialize(hardwareMap);
-        telemetry.addLine("Control the robot drivetrain with the sticks");
-        telemetry.addLine("Motion will be robot-centric");
-        telemetry.addLine("This has not been tested");
+        telemetryHandler.addLine("Control the robot drivetrain with the sticks");
+        telemetryHandler.addLine("Motion will be robot-centric");
+        telemetryHandler.addLine("This has not been tested");
+        telemetryHandler.update();
     }
 
     @Override
@@ -51,14 +54,15 @@ public class RobotDrive extends OpMode {
         if (gamepad1.back) {
             scoringMech.fullRetract(0.5);
         }*/
-        telemetry.addLine("Use left stick to control forward and lateral movement");
-        telemetry.addLine("Use right stick to control rotational movement");
-        telemetry.addLine("Click the left stick to enable/disable slow mode");
-        telemetry.addLine();
-        telemetry.addData("Forward vel",forward);
-        telemetry.addData("Lateral vel",strafe);
-        telemetry.addData("Angular vel",rotate);
-        telemetry.addData("Slow Mode Active",slowModeActive);
-        telemetry.addData("Time (s)",getRuntime());
+        telemetryHandler.addLine("Use left stick to control forward and lateral movement");
+        telemetryHandler.addLine("Use right stick to control rotational movement");
+        telemetryHandler.addLine("Click the left stick to enable/disable slow mode");
+        telemetryHandler.addLine();
+        telemetryHandler.addData("Forward vel",forward);
+        telemetryHandler.addData("Lateral vel",strafe);
+        telemetryHandler.addData("Angular vel",rotate);
+        telemetryHandler.addData("Slow Mode",slowModeActive ? "ACTIVE" : "INACTIVE");
+        telemetryHandler.addData("Time (s)",getRuntime());
+        telemetryHandler.update();
     }
 }

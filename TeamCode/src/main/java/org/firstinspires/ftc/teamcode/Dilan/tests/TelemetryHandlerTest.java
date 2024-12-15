@@ -17,6 +17,8 @@ public class TelemetryHandlerTest extends OpMode {
     @Override
     public void loop() {
         telemetryHandler.addData("Graph",i);
+        telemetryHandler.addLine();
+        telemetryHandler.addLine(1e-3);
         Canvas canvas = telemetryHandler.fieldOverlay();
         canvas.setStroke("#00FF00");
         canvas.setStrokeWidth(1);
