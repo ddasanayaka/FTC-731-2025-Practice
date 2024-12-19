@@ -5,7 +5,7 @@ import com.acmerobotics.dashboard.canvas.Canvas
 import com.acmerobotics.dashboard.telemetry.TelemetryPacket
 import org.firstinspires.ftc.robotcore.external.Telemetry
 
-class TelemetryHandler @JvmOverloads constructor(
+class TelemetrySynchronizer @JvmOverloads constructor(
     private val systemTelemetry: Telemetry? = null,
 ) {
     private val dashboard: FtcDashboard = FtcDashboard.getInstance()
@@ -14,6 +14,10 @@ class TelemetryHandler @JvmOverloads constructor(
     fun addData(key: String, value: Any) {
         packet.put(key, value)
         systemTelemetry?.addData(key, value)
+    }
+
+    fun addData(caption: String, vararg values: Any) {
+        addData(caption, values.joinToString(", "))
     }
 
     fun addLine(value: Any) {

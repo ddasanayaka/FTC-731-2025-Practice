@@ -4,8 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Dilan.MecanumDrive;
-import org.firstinspires.ftc.teamcode.Dilan.ScoringMech;
-import org.firstinspires.ftc.teamcode.TelemetryHandler;
+import org.firstinspires.ftc.teamcode.TelemetrySynchronizer;
 
 @TeleOp
 public class RobotDrive extends OpMode {
@@ -13,16 +12,16 @@ public class RobotDrive extends OpMode {
     MecanumDrive drive = new MecanumDrive();
     boolean leftStickHeld;
     boolean slowModeActive;
-    TelemetryHandler telemetryHandler = new TelemetryHandler(telemetry);
+    TelemetrySynchronizer telemetrySynchronizer = new TelemetrySynchronizer(telemetry);
 
     @Override
     public void init() {
         drive.initialize(hardwareMap);
         //scoringMech.initialize(hardwareMap);
-        telemetryHandler.addLine("Control the robot drivetrain with the sticks");
-        telemetryHandler.addLine("Motion will be robot-centric");
-        telemetryHandler.addLine("This has not been tested");
-        telemetryHandler.update();
+        telemetrySynchronizer.addLine("Control the robot drivetrain with the sticks");
+        telemetrySynchronizer.addLine("Motion will be robot-centric");
+        telemetrySynchronizer.addLine("This has not been tested");
+        telemetrySynchronizer.update();
     }
 
     @Override
@@ -54,15 +53,15 @@ public class RobotDrive extends OpMode {
         if (gamepad1.back) {
             scoringMech.fullRetract(0.5);
         }*/
-        telemetryHandler.addLine("Use left stick to control forward and lateral movement");
-        telemetryHandler.addLine("Use right stick to control rotational movement");
-        telemetryHandler.addLine("Click the left stick to enable/disable slow mode");
-        telemetryHandler.addLine();
-        telemetryHandler.addData("Forward vel",forward);
-        telemetryHandler.addData("Lateral vel",strafe);
-        telemetryHandler.addData("Angular vel",rotate);
-        telemetryHandler.addData("Slow Mode",slowModeActive ? "ACTIVE" : "INACTIVE");
-        telemetryHandler.addData("Time (s)",getRuntime());
-        telemetryHandler.update();
+        telemetrySynchronizer.addLine("Use left stick to control forward and lateral movement");
+        telemetrySynchronizer.addLine("Use right stick to control rotational movement");
+        telemetrySynchronizer.addLine("Click the left stick to enable/disable slow mode");
+        telemetrySynchronizer.addLine();
+        telemetrySynchronizer.addData("Forward vel",forward);
+        telemetrySynchronizer.addData("Lateral vel",strafe);
+        telemetrySynchronizer.addData("Angular vel",rotate);
+        telemetrySynchronizer.addData("Slow Mode",slowModeActive ? "ACTIVE" : "INACTIVE");
+        telemetrySynchronizer.addData("Time (s)",getRuntime());
+        telemetrySynchronizer.update();
     }
 }
